@@ -21,6 +21,15 @@ CATEGORY_DESCRIPTIONS = {
     "Термобилеты": "Билетная продукция и термоматериалы для событий, проходов и учёта.",
     "Упаковка": "Коробки, обечайки, BOPP-материалы и упаковка для разных товарных групп.",
 }
+SITE_URL = "https://wargie.github.io/flexprint_site"
+SITE_NAME = "Флекспринт"
+KEYWORDS = {
+    "Круговая этикетка": "круговая этикетка, этикетка для PET, этикетки для напитков, печать этикеток Калининград",
+    "Офсет": "офсетная печать Калининград, визитки, папки, флайеры, листовая полиграфия",
+    "Самоклеящаяся этикетка": "самоклеящиеся этикетки, печать самоклеящихся этикеток, этикетки для продуктов, этикетки Калининград",
+    "Термобилеты": "термобилеты, печать билетов, билетная продукция, термоматериалы Калининград",
+    "Упаковка": "печать упаковки, картонная упаковка, обечайки, BOPP упаковка, упаковка Калининград",
+}
 
 
 def load_items() -> list[dict[str, str]]:
@@ -64,6 +73,9 @@ def render_groups(category: str, items: list[dict[str, str]]) -> str:
 def render_page(category: str, items: list[dict[str, str]]) -> str:
     title = esc(category)
     description = esc(CATEGORY_DESCRIPTIONS[category])
+    page_title = esc(f"{category} - примеры работ Флекспринт в Калининграде")
+    page_url = f"{SITE_URL}/{CATEGORY_PAGES[category]}"
+    keywords = esc(KEYWORDS[category])
     groups = render_groups(category, items)
     body_class = "catalog-page catalog-page--termobilety" if category == "Термобилеты" else "catalog-page"
     return f"""<!DOCTYPE html>
@@ -71,8 +83,24 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} — Флекспринт</title>
+  <title>{page_title}</title>
   <meta name="description" content="{description}" />
+  <meta name="keywords" content="{keywords}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="{SITE_NAME}" />
+  <meta name="theme-color" content="#111827" />
+  <link rel="canonical" href="{page_url}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="{SITE_NAME}" />
+  <meta property="og:title" content="{page_title}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:url" content="{page_url}" />
+  <meta property="og:image" content="{SITE_URL}/assets/hero-business.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{page_title}" />
+  <meta name="twitter:description" content="{description}" />
+  <meta name="twitter:image" content="{SITE_URL}/assets/hero-business.jpg" />
   <style>
     :root {{
       --bg: #eef1f5;
