@@ -1,19 +1,19 @@
 # Индекс материалов
 
-Дата повторной индексации: 2026-05-21
+Дата повторной индексации: 2026-05-22
 
 ## Сводка
 
-Всего рабочих изображений: 106 без учета `logo.png`.
-Оптимизированных изображений для сайта: 106 JPG в `assets/catalog`.
+Всего рабочих изображений: 115 без учета `logo.png`.
+Оптимизированных изображений для сайта: 115 JPG в `assets/catalog`.
 
 - Круговая этикетка: 8
 - Офсет: 15
-- Самоклеящаяся этикетка: 48
+- Самоклеящаяся этикетка: 57
   - Бытовая Химия: 5
   - Косметика: 4
-  - Напитки: 12
-  - Продукты питания: 23
+  - Напитки: 17
+  - Продукты питания: 27
   - Электроника: 4
 - Термобилеты: 5
 - Упаковка: 30
@@ -74,6 +74,11 @@
 - `Самоклеящаяся этикетка/Напитки/Сок (1).png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/sok-1.jpg` (720x900, 147 KB)
 - `Самоклеящаяся этикетка/Напитки/Сок (2).png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/sok-2.jpg` (720x900, 164 KB)
 - `Самоклеящаяся этикетка/Напитки/Сок (3).png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/sok-3.jpg` (720x900, 149 KB)
+- `Самоклеящаяся этикетка/Напитки/ЯЛ_ацидолакт.png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/yal-acidolakt.jpg` (720x900, 94 KB)
+- `Самоклеящаяся этикетка/Напитки/ЯЛ_кефир.png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/yal-kefir.jpg` (720x900, 95 KB)
+- `Самоклеящаяся этикетка/Напитки/ЯЛ_молоко_топлёное.png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/yal-moloko-toplenoe.jpg` (720x900, 99 KB)
+- `Самоклеящаяся этикетка/Напитки/ЯЛ_ряженка.png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/yal-ryazhenka.jpg` (720x900, 111 KB)
+- `Самоклеящаяся этикетка/Напитки/ЯЛ_сливки.png` -> `assets/catalog/samokleyaschayasya-etiketka/napitki/yal-slivki.jpg` (720x900, 97 KB)
 
 ### Продукты питания
 - `Самоклеящаяся этикетка/Продукты питания/Jam (1).png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/jam-1.jpg` (720x900, 134 KB)
@@ -94,6 +99,10 @@
 - `Самоклеящаяся этикетка/Продукты питания/Котлеты.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/kotlety.jpg` (720x900, 126 KB)
 - `Самоклеящаяся этикетка/Продукты питания/Плов.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/plov.jpg` (720x900, 127 KB)
 - `Самоклеящаяся этикетка/Продукты питания/Сало.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/salo.jpg` (720x900, 120 KB)
+- `Самоклеящаяся этикетка/Продукты питания/Сыр (1).png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-1.jpg` (720x900, 154 KB)
+- `Самоклеящаяся этикетка/Продукты питания/Сыр (2).png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-2.jpg` (720x900, 135 KB)
+- `Самоклеящаяся этикетка/Продукты питания/Сыр (3).png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-3.jpg` (720x900, 158 KB)
+- `Самоклеящаяся этикетка/Продукты питания/Сыр (4).png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-4.jpg` (720x900, 135 KB)
 - `Самоклеящаяся этикетка/Продукты питания/Фарш.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/farsh.jpg` (720x900, 133 KB)
 - `Самоклеящаяся этикетка/Продукты питания/Хлеб_Батон_нарезной.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/hleb-baton-nareznoy.jpg` (720x900, 153 KB)
 - `Самоклеящаяся этикетка/Продукты питания/Хлеб_Бородинский.png` -> `assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/hleb-borodinskiy.jpg` (720x900, 182 KB)

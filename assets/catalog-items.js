@@ -309,6 +309,41 @@ const catalogItems = [
   },
   {
     "category": "Самоклеящаяся этикетка",
+    "subcategory": "Напитки",
+    "title": "ЯЛ ацидолакт",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/napitki/yal-acidolakt.jpg",
+    "source": "Самоклеящаяся этикетка/Напитки/ЯЛ_ацидолакт.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Напитки",
+    "title": "ЯЛ кефир",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/napitki/yal-kefir.jpg",
+    "source": "Самоклеящаяся этикетка/Напитки/ЯЛ_кефир.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Напитки",
+    "title": "ЯЛ молоко топлёное",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/napitki/yal-moloko-toplenoe.jpg",
+    "source": "Самоклеящаяся этикетка/Напитки/ЯЛ_молоко_топлёное.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Напитки",
+    "title": "ЯЛ ряженка",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/napitki/yal-ryazhenka.jpg",
+    "source": "Самоклеящаяся этикетка/Напитки/ЯЛ_ряженка.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Напитки",
+    "title": "ЯЛ сливки",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/napitki/yal-slivki.jpg",
+    "source": "Самоклеящаяся этикетка/Напитки/ЯЛ_сливки.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
     "subcategory": "Продукты питания",
     "title": "Jam (1)",
     "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/jam-1.jpg",
@@ -432,6 +467,34 @@ const catalogItems = [
     "title": "Сало",
     "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/salo.jpg",
     "source": "Самоклеящаяся этикетка/Продукты питания/Сало.png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Продукты питания",
+    "title": "Сыр (1)",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-1.jpg",
+    "source": "Самоклеящаяся этикетка/Продукты питания/Сыр (1).png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Продукты питания",
+    "title": "Сыр (2)",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-2.jpg",
+    "source": "Самоклеящаяся этикетка/Продукты питания/Сыр (2).png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Продукты питания",
+    "title": "Сыр (3)",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-3.jpg",
+    "source": "Самоклеящаяся этикетка/Продукты питания/Сыр (3).png"
+  },
+  {
+    "category": "Самоклеящаяся этикетка",
+    "subcategory": "Продукты питания",
+    "title": "Сыр (4)",
+    "src": "assets/catalog/samokleyaschayasya-etiketka/produkty-pitaniya/syr-4.jpg",
+    "source": "Самоклеящаяся этикетка/Продукты питания/Сыр (4).png"
   },
   {
     "category": "Самоклеящаяся этикетка",
