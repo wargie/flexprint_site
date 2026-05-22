@@ -76,6 +76,67 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
     page_title = esc(f"{category} - примеры работ Флекспринт в Калининграде")
     page_url = f"{SITE_URL}/{CATEGORY_PAGES[category]}"
     keywords = esc(KEYWORDS[category])
+    structured_data = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "CollectionPage",
+                    "@id": f"{page_url}#webpage",
+                    "url": page_url,
+                    "name": f"{category} - примеры работ Флекспринт в Калининграде",
+                    "description": CATEGORY_DESCRIPTIONS[category],
+                    "isPartOf": {
+                        "@type": "WebSite",
+                        "@id": f"{SITE_URL}/#website",
+                        "name": SITE_NAME,
+                        "url": f"{SITE_URL}/",
+                    },
+                    "about": {
+                        "@type": "Service",
+                        "name": category,
+                        "provider": {
+                            "@type": "LocalBusiness",
+                            "@id": f"{SITE_URL}/#organization",
+                            "name": SITE_NAME,
+                        },
+                    },
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "numberOfItems": len(items),
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": index,
+                                "name": item["title"],
+                                "url": f"{SITE_URL}/{item['src']}",
+                            }
+                            for index, item in enumerate(items, start=1)
+                        ],
+                    },
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Главная",
+                            "item": f"{SITE_URL}/",
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": category,
+                            "item": page_url,
+                        },
+                    ],
+                },
+            ],
+        },
+        ensure_ascii=False,
+        indent=2,
+    )
     groups = render_groups(category, items)
     body_class = "catalog-page catalog-page--termobilety" if category == "Термобилеты" else "catalog-page"
     return f"""<!DOCTYPE html>
@@ -101,6 +162,9 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
   <meta name="twitter:title" content="{page_title}" />
   <meta name="twitter:description" content="{description}" />
   <meta name="twitter:image" content="{SITE_URL}/assets/hero-business.jpg" />
+  <script type="application/ld+json">
+{structured_data}
+  </script>
   <style>
     :root {{
       --bg: #eef1f5;
