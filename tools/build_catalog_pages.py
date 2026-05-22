@@ -151,6 +151,8 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
   <meta name="author" content="{SITE_NAME}" />
   <meta name="theme-color" content="#111827" />
   <link rel="canonical" href="{page_url}" />
+  <link rel="icon" href="{SITE_URL}/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="{SITE_URL}/favicon.png" type="image/png" sizes="120x120" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:site_name" content="{SITE_NAME}" />
