@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wargie.github.io/flexprint_site/sitemap.xml
