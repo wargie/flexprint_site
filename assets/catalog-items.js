@@ -595,6 +595,13 @@ const catalogItems = [
     "source": "Термобилеты/Термобилет (5).png"
   },
   {
+    "category": "Термочеки",
+    "subcategory": "",
+    "title": "Термочеки",
+    "src": "assets/catalog/termocheki/termocheki.jpg",
+    "source": "Термочеки/Термочеки.png"
+  },
+  {
     "category": "Упаковка",
     "subcategory": "",
     "title": "BOPP pack (1)",

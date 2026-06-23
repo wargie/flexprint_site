@@ -16,6 +16,7 @@ SOURCE_DIRS = [
     "Самоклеящаяся этикетка",
     "Термобилеты",
     "Упаковка",
+    "Термочеки",
 ]
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 CATALOG_DIR = ROOT / "assets" / "catalog"

@@ -1079,13 +1079,23 @@
       "Самоклеящаяся этикетка": "catalog-samokleyaschayasya-etiketka.html",
       "Термобилеты": "catalog-termobilety.html",
       "Упаковка": "catalog-upakovka.html",
+      "Термочеки": "catalog-termocheki.html",
     };
+    const categoryOrder = [
+      "Круговая этикетка",
+      "Офсет",
+      "Самоклеящаяся этикетка",
+      "Термобилеты",
+      "Упаковка",
+      "Термочеки",
+    ];
     const categoryDescriptions = {
       "Круговая этикетка": "Этикетки для PET-тары, напитков и минеральной воды.",
       "Офсет": "Листовая продукция, папки, визитки, флайеры и упаковочные решения.",
       "Самоклеящаяся этикетка": "Пищевая продукция, напитки, косметика, бытовая химия и электроника.",
       "Термобилеты": "Билетная продукция и термоматериалы.",
       "Упаковка": "Коробки, обечайки, гибкая упаковка и продуктовые решения.",
+      "Термочеки": "Термоэтикетки для прямой термопечати, термотрансферной, каплеструйной печати и других способов нанесения переменной информации.",
     };
 
     function toggleMenu() {
@@ -1114,7 +1124,9 @@
         return acc;
       }, new Map());
       const fragment = document.createDocumentFragment();
-      categories.forEach((items, category) => {
+      categoryOrder.forEach((category) => {
+        const items = categories.get(category);
+        if (!items?.length) return;
         const card = document.createElement("a");
         card.className = "portfolio-category";
         card.href = categoryPages[category] || "#portfolio";
