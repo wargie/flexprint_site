@@ -38,50 +38,36 @@ THERMAL_MATERIALS = [
         "Thermal ECO",
         "Экономичная бумажная термоэтикетка без защитного покрытия. Подходит для прямой термопечати и краткосрочной маркировки в сухих условиях.",
         "assets/thermal-materials/thermal-eco.jpg",
-        [("58 × 40 мм", "rect", 58, 40)],
         "Жёлтая",
-        "Ø40 мм / Ø76 мм",
+        "Ø40 мм",
     ),
     (
         "Thermal TOP",
         "Бумажная термоэтикетка с защитным покрытием. Устойчива к влаге, жирам и истиранию, подходит для более длительного хранения и эксплуатации.",
         "assets/thermal-materials/thermal-top.jpg",
-        [
-            ("58 × 60 мм", "rect", 58, 60),
-            ("58 × 90 мм", "rect", 58, 90),
-        ],
         "Жёлтая",
-        "Ø40 мм / Ø76 мм",
+        "Ø40 мм",
     ),
     (
         "Semigloss Paper",
         "Полуглянцевая бумага для термотрансферной, каплеструйной и других видов печати. Обеспечивает чёткое нанесение текста, графики и штрихкодов.",
         "assets/thermal-materials/semigloss-paper.jpg",
-        [("100 × 70 мм", "rect", 100, 70)],
         "Жёлтая",
-        "Ø40 мм / Ø76 мм",
+        "Ø40 мм",
     ),
     (
         "PP White",
         "Белая полипропиленовая плёнка для термотрансферной печати. Устойчива к влаге, разрыву и воздействию бытовой химии.",
         "assets/thermal-materials/pp-white.jpg",
-        [("100 × 50 мм", "rect", 100, 50)],
         "Белая",
-        "Ø40 мм / Ø76 мм",
+        "Ø40 мм",
     ),
     (
         "PP Direct Thermal",
         "Белая полипропиленовая плёнка для прямой термопечати без риббона. Подходит для влагостойкой маркировки и нанесения переменной информации.",
         "assets/thermal-materials/pp-direct-thermal.jpg",
-        [
-            ("80 × 50 мм", "rect", 80, 50),
-            ("15 × 15 мм", "rect", 15, 15),
-            ("Ø14 мм", "circle", 14, 14),
-            ("Ø16 мм", "circle", 16, 16),
-            ("Ø20 мм", "circle", 20, 20),
-        ],
         "Белая",
-        "Ø40 мм / Ø76 мм",
+        "Ø40 мм",
     ),
 ]
 
@@ -131,37 +117,19 @@ def render_materials(category: str) -> str:
     if category != "Термочеки":
         return ""
 
-    def render_samples(samples: list[tuple[str, str, int, int]], backing: str) -> str:
-        backing_class = "label-sample--yellow" if backing == "Жёлтая" else "label-sample--white"
-        return "\n".join(
-            f"""                  <figure class="label-sample {backing_class}">
-                    <div class="label-sample__backing">
-                      <span class="label-sample__shape {'label-sample__shape--circle' if shape == 'circle' else ''}" style="--sample-width: {width * 1.6:.1f}px; --sample-height: {height * 1.6:.1f}px;"></span>
-                    </div>
-                    <figcaption>{esc(label)}</figcaption>
-                  </figure>"""
-            for label, shape, width, height in samples
-        )
-
     cards = "\n".join(
         f"""          <article class="material-card">
             <img class="material-card__image" src="{esc(image)}" alt="{esc(name)} — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>{esc(name)}</h3>
               <p>{esc(description)}</p>
-              <div class="material-card__geometry">
-                <span class="material-card__geometry-title">Форматы</span>
-                <div class="label-samples">
-{render_samples(samples, backing)}
-                </div>
-              </div>
               <dl class="material-card__specs">
                 <div><dt>Подложка</dt><dd>{esc(backing)}</dd></div>
                 <div><dt>Втулка намотки</dt><dd>{esc(core)}</dd></div>
               </dl>
             </div>
           </article>"""
-        for name, description, image, samples, backing, core in THERMAL_MATERIALS
+        for name, description, image, backing, core in THERMAL_MATERIALS
     )
     return f"""
         <section class="materials" aria-labelledby="materials-title">
@@ -450,77 +418,6 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
     .material-card p {{
       margin: 0;
       color: var(--muted);
-    }}
-
-    .material-card__geometry {{
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }}
-
-    .material-card__geometry-title {{
-      display: block;
-      margin-bottom: 14px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }}
-
-    .label-samples {{
-      min-height: 170px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 14px;
-      padding: 16px;
-      background: #eef1f5;
-      border: 1px solid var(--line);
-    }}
-
-    .label-sample {{
-      flex: 0 0 auto;
-      display: grid;
-      justify-items: center;
-      gap: 8px;
-      margin: 0;
-    }}
-
-    .label-sample__backing {{
-      padding: 4px;
-      border: 1px solid rgba(31, 41, 55, 0.16);
-      box-shadow: 0 6px 14px rgba(31, 41, 55, 0.09);
-    }}
-
-    .label-sample--yellow .label-sample__backing {{
-      background: #f4c84a;
-    }}
-
-    .label-sample--white .label-sample__backing {{
-      background: #ffffff;
-    }}
-
-    .label-sample__shape {{
-      width: var(--sample-width);
-      height: var(--sample-height);
-      display: block;
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-      border-radius: 3px;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
-    }}
-
-    .label-sample__shape--circle {{
-      border-radius: 50%;
-    }}
-
-    .label-sample figcaption {{
-      color: var(--text);
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
     }}
 
     .material-card__specs {{
