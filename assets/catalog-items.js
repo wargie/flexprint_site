@@ -623,6 +623,13 @@ const catalogItems = [
     "source": "Generated/lab-label"
   },
   {
+    "category": "Термочеки",
+    "subcategory": "",
+    "title": "Промышленный учёт компонентов",
+    "src": "assets/catalog/termocheki/inventory-label.jpg",
+    "source": "Generated/inventory-label"
+  },
+  {
     "category": "Упаковка",
     "subcategory": "",
     "title": "BOPP pack (1)",
