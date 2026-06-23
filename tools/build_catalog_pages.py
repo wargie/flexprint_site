@@ -37,22 +37,42 @@ THERMAL_MATERIALS = [
     (
         "Thermal ECO",
         "Экономичная бумажная термоэтикетка без защитного покрытия. Подходит для прямой термопечати и краткосрочной маркировки в сухих условиях.",
+        "assets/thermal-materials/thermal-eco.jpg",
+        "58 × 40 мм",
+        "Жёлтая",
+        "",
     ),
     (
         "Thermal TOP",
         "Бумажная термоэтикетка с защитным покрытием. Устойчива к влаге, жирам и истиранию, подходит для более длительного хранения и эксплуатации.",
+        "assets/thermal-materials/thermal-top.jpg",
+        "58 × 60 мм",
+        "Жёлтая",
+        "",
     ),
     (
         "Semigloss Paper",
         "Полуглянцевая бумага для термотрансферной, каплеструйной и других видов печати. Обеспечивает чёткое нанесение текста, графики и штрихкодов.",
+        "assets/thermal-materials/semigloss-paper.jpg",
+        "100 × 70 мм",
+        "Жёлтая",
+        "",
     ),
     (
         "PP White",
         "Белая полипропиленовая плёнка для термотрансферной печати. Устойчива к влаге, разрыву и воздействию бытовой химии.",
+        "assets/thermal-materials/pp-white.jpg",
+        "100 × 50 мм",
+        "Белая",
+        "Ø40 мм / Ø76 мм",
     ),
     (
         "PP Direct Thermal",
         "Белая полипропиленовая плёнка для прямой термопечати без риббона. Подходит для влагостойкой маркировки и нанесения переменной информации.",
+        "assets/thermal-materials/pp-direct-thermal.jpg",
+        "80 × 50 мм",
+        "Белая",
+        "Ø40 мм / Ø76 мм",
     ),
 ]
 
@@ -104,10 +124,18 @@ def render_materials(category: str) -> str:
 
     cards = "\n".join(
         f"""          <article class="material-card">
-            <h3>{esc(name)}</h3>
-            <p>{esc(description)}</p>
+            <img class="material-card__image" src="{esc(image)}" alt="{esc(name)} — образец этикетки {esc(size)}" loading="lazy" />
+            <div class="material-card__body">
+              <h3>{esc(name)}</h3>
+              <p>{esc(description)}</p>
+              <dl class="material-card__specs">
+                <div><dt>Размер образца</dt><dd>{esc(size)}</dd></div>
+                <div><dt>Подложка</dt><dd>{esc(backing)}</dd></div>
+                {f'<div><dt>Втулка намотки</dt><dd>{esc(core)}</dd></div>' if core else ''}
+              </dl>
+            </div>
           </article>"""
-        for name, description in THERMAL_MATERIALS
+        for name, description, image, size, backing, core in THERMAL_MATERIALS
     )
     return f"""
         <section class="materials" aria-labelledby="materials-title">
@@ -369,10 +397,23 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
 
     .material-card {{
       min-width: 0;
-      padding: 24px;
       background: rgba(255, 255, 255, 0.92);
       border: 1px solid var(--line);
       box-shadow: 0 18px 42px rgba(31, 41, 55, 0.055);
+      overflow: hidden;
+    }}
+
+    .material-card__image {{
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      display: block;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+      background: #f9fafb;
+    }}
+
+    .material-card__body {{
+      padding: 24px;
     }}
 
     .material-card h3 {{
@@ -383,6 +424,31 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
     .material-card p {{
       margin: 0;
       color: var(--muted);
+    }}
+
+    .material-card__specs {{
+      display: grid;
+      gap: 8px;
+      margin: 20px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }}
+
+    .material-card__specs div {{
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }}
+
+    .material-card__specs dt {{
+      color: var(--muted);
+    }}
+
+    .material-card__specs dd {{
+      margin: 0;
+      color: var(--text);
+      font-weight: 700;
+      text-align: right;
     }}
 
     .examples-title {{
