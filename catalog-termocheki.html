@@ -262,6 +262,77 @@
       color: var(--muted);
     }
 
+    .material-card__geometry {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .material-card__geometry-title {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .label-samples {
+      min-height: 170px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 14px;
+      padding: 16px;
+      background: #eef1f5;
+      border: 1px solid var(--line);
+    }
+
+    .label-sample {
+      flex: 0 0 auto;
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .label-sample__backing {
+      padding: 4px;
+      border: 1px solid rgba(31, 41, 55, 0.16);
+      box-shadow: 0 6px 14px rgba(31, 41, 55, 0.09);
+    }
+
+    .label-sample--yellow .label-sample__backing {
+      background: #f4c84a;
+    }
+
+    .label-sample--white .label-sample__backing {
+      background: #ffffff;
+    }
+
+    .label-sample__shape {
+      width: var(--sample-width);
+      height: var(--sample-height);
+      display: block;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 3px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+    }
+
+    .label-sample__shape--circle {
+      border-radius: 50%;
+    }
+
+    .label-sample figcaption {
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
     .material-card__specs {
       display: grid;
       gap: 8px;
@@ -483,60 +554,140 @@
           <h2 id="materials-title">Материалы</h2>
           <div class="materials-grid">
           <article class="material-card">
-            <img class="material-card__image" src="assets/thermal-materials/thermal-eco.jpg" alt="Thermal ECO — образец этикетки 58 × 40 мм" loading="lazy" />
+            <img class="material-card__image" src="assets/thermal-materials/thermal-eco.jpg" alt="Thermal ECO — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>Thermal ECO</h3>
               <p>Экономичная бумажная термоэтикетка без защитного покрытия. Подходит для прямой термопечати и краткосрочной маркировки в сухих условиях.</p>
+              <div class="material-card__geometry">
+                <span class="material-card__geometry-title">Форматы</span>
+                <div class="label-samples">
+                  <figure class="label-sample label-sample--yellow">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 92.8px; --sample-height: 64.0px;"></span>
+                    </div>
+                    <figcaption>58 × 40 мм</figcaption>
+                  </figure>
+                </div>
+              </div>
               <dl class="material-card__specs">
-                <div><dt>Размер образца</dt><dd>58 × 40 мм</dd></div>
                 <div><dt>Подложка</dt><dd>Жёлтая</dd></div>
-                
+                <div><dt>Втулка намотки</dt><dd>Ø40 мм / Ø76 мм</dd></div>
               </dl>
             </div>
           </article>
           <article class="material-card">
-            <img class="material-card__image" src="assets/thermal-materials/thermal-top.jpg" alt="Thermal TOP — образец этикетки 58 × 60 мм" loading="lazy" />
+            <img class="material-card__image" src="assets/thermal-materials/thermal-top.jpg" alt="Thermal TOP — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>Thermal TOP</h3>
               <p>Бумажная термоэтикетка с защитным покрытием. Устойчива к влаге, жирам и истиранию, подходит для более длительного хранения и эксплуатации.</p>
+              <div class="material-card__geometry">
+                <span class="material-card__geometry-title">Форматы</span>
+                <div class="label-samples">
+                  <figure class="label-sample label-sample--yellow">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 92.8px; --sample-height: 96.0px;"></span>
+                    </div>
+                    <figcaption>58 × 60 мм</figcaption>
+                  </figure>
+                  <figure class="label-sample label-sample--yellow">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 92.8px; --sample-height: 144.0px;"></span>
+                    </div>
+                    <figcaption>58 × 90 мм</figcaption>
+                  </figure>
+                </div>
+              </div>
               <dl class="material-card__specs">
-                <div><dt>Размер образца</dt><dd>58 × 60 мм</dd></div>
                 <div><dt>Подложка</dt><dd>Жёлтая</dd></div>
-                
+                <div><dt>Втулка намотки</dt><dd>Ø40 мм / Ø76 мм</dd></div>
               </dl>
             </div>
           </article>
           <article class="material-card">
-            <img class="material-card__image" src="assets/thermal-materials/semigloss-paper.jpg" alt="Semigloss Paper — образец этикетки 100 × 70 мм" loading="lazy" />
+            <img class="material-card__image" src="assets/thermal-materials/semigloss-paper.jpg" alt="Semigloss Paper — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>Semigloss Paper</h3>
               <p>Полуглянцевая бумага для термотрансферной, каплеструйной и других видов печати. Обеспечивает чёткое нанесение текста, графики и штрихкодов.</p>
+              <div class="material-card__geometry">
+                <span class="material-card__geometry-title">Форматы</span>
+                <div class="label-samples">
+                  <figure class="label-sample label-sample--yellow">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 160.0px; --sample-height: 112.0px;"></span>
+                    </div>
+                    <figcaption>100 × 70 мм</figcaption>
+                  </figure>
+                </div>
+              </div>
               <dl class="material-card__specs">
-                <div><dt>Размер образца</dt><dd>100 × 70 мм</dd></div>
                 <div><dt>Подложка</dt><dd>Жёлтая</dd></div>
-                
+                <div><dt>Втулка намотки</dt><dd>Ø40 мм / Ø76 мм</dd></div>
               </dl>
             </div>
           </article>
           <article class="material-card">
-            <img class="material-card__image" src="assets/thermal-materials/pp-white.jpg" alt="PP White — образец этикетки 100 × 50 мм" loading="lazy" />
+            <img class="material-card__image" src="assets/thermal-materials/pp-white.jpg" alt="PP White — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>PP White</h3>
               <p>Белая полипропиленовая плёнка для термотрансферной печати. Устойчива к влаге, разрыву и воздействию бытовой химии.</p>
+              <div class="material-card__geometry">
+                <span class="material-card__geometry-title">Форматы</span>
+                <div class="label-samples">
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 160.0px; --sample-height: 80.0px;"></span>
+                    </div>
+                    <figcaption>100 × 50 мм</figcaption>
+                  </figure>
+                </div>
+              </div>
               <dl class="material-card__specs">
-                <div><dt>Размер образца</dt><dd>100 × 50 мм</dd></div>
                 <div><dt>Подложка</dt><dd>Белая</dd></div>
                 <div><dt>Втулка намотки</dt><dd>Ø40 мм / Ø76 мм</dd></div>
               </dl>
             </div>
           </article>
           <article class="material-card">
-            <img class="material-card__image" src="assets/thermal-materials/pp-direct-thermal.jpg" alt="PP Direct Thermal — образец этикетки 80 × 50 мм" loading="lazy" />
+            <img class="material-card__image" src="assets/thermal-materials/pp-direct-thermal.jpg" alt="PP Direct Thermal — образец этикеточного материала" loading="lazy" />
             <div class="material-card__body">
               <h3>PP Direct Thermal</h3>
               <p>Белая полипропиленовая плёнка для прямой термопечати без риббона. Подходит для влагостойкой маркировки и нанесения переменной информации.</p>
+              <div class="material-card__geometry">
+                <span class="material-card__geometry-title">Форматы</span>
+                <div class="label-samples">
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 128.0px; --sample-height: 80.0px;"></span>
+                    </div>
+                    <figcaption>80 × 50 мм</figcaption>
+                  </figure>
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape " style="--sample-width: 24.0px; --sample-height: 24.0px;"></span>
+                    </div>
+                    <figcaption>15 × 15 мм</figcaption>
+                  </figure>
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape label-sample__shape--circle" style="--sample-width: 22.4px; --sample-height: 22.4px;"></span>
+                    </div>
+                    <figcaption>Ø14 мм</figcaption>
+                  </figure>
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape label-sample__shape--circle" style="--sample-width: 25.6px; --sample-height: 25.6px;"></span>
+                    </div>
+                    <figcaption>Ø16 мм</figcaption>
+                  </figure>
+                  <figure class="label-sample label-sample--white">
+                    <div class="label-sample__backing">
+                      <span class="label-sample__shape label-sample__shape--circle" style="--sample-width: 32.0px; --sample-height: 32.0px;"></span>
+                    </div>
+                    <figcaption>Ø20 мм</figcaption>
+                  </figure>
+                </div>
+              </div>
               <dl class="material-card__specs">
-                <div><dt>Размер образца</dt><dd>80 × 50 мм</dd></div>
                 <div><dt>Подложка</dt><dd>Белая</dd></div>
                 <div><dt>Втулка намотки</dt><dd>Ø40 мм / Ø76 мм</dd></div>
               </dl>
