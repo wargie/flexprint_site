@@ -156,4 +156,4 @@
 - `Упаковка/Обечайка_ГБ (7).png` -> `assets/catalog/upakovka/obechayka-gb-7.jpg` (720x900, 159 KB)
 
 ## Термочеки
-- `Термочеки/Термочеки.png` -> `assets/catalog/termocheki/termocheki.jpg` (1200x900, 88 KB)
+- `Термочеки/Термочеки.png` -> `assets/catalog/termocheki/termocheki.jpg` (1200x900, 111 KB)

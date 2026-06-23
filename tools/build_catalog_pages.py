@@ -33,6 +33,28 @@ KEYWORDS = {
     "Упаковка": "печать упаковки, картонная упаковка, обечайки, BOPP упаковка, упаковка Калининград",
     "Термочеки": "термочеки, термоэтикетки, прямая термопечать, термотрансферная печать, печать переменной информации",
 }
+THERMAL_MATERIALS = [
+    (
+        "Thermal ECO",
+        "Экономичная бумажная термоэтикетка без защитного покрытия. Подходит для прямой термопечати и краткосрочной маркировки в сухих условиях.",
+    ),
+    (
+        "Thermal TOP",
+        "Бумажная термоэтикетка с защитным покрытием. Устойчива к влаге, жирам и истиранию, подходит для более длительного хранения и эксплуатации.",
+    ),
+    (
+        "Semigloss Paper",
+        "Полуглянцевая бумага для термотрансферной, каплеструйной и других видов печати. Обеспечивает чёткое нанесение текста, графики и штрихкодов.",
+    ),
+    (
+        "PP White",
+        "Белая полипропиленовая плёнка для термотрансферной печати. Устойчива к влаге, разрыву и воздействию бытовой химии.",
+    ),
+    (
+        "PP Direct Thermal",
+        "Белая полипропиленовая плёнка для прямой термопечати без риббона. Подходит для влагостойкой маркировки и нанесения переменной информации.",
+    ),
+]
 
 
 def load_items() -> list[dict[str, str]]:
@@ -73,12 +95,34 @@ def render_groups(category: str, items: list[dict[str, str]]) -> str:
     return "\n".join(parts)
 
 
+def render_materials(category: str) -> str:
+    if category != "Термочеки":
+        return ""
+
+    cards = "\n".join(
+        f"""          <article class="material-card">
+            <h3>{esc(name)}</h3>
+            <p>{esc(description)}</p>
+          </article>"""
+        for name, description in THERMAL_MATERIALS
+    )
+    return f"""
+        <section class="materials" aria-labelledby="materials-title">
+          <h2 id="materials-title">Материалы</h2>
+          <div class="materials-grid">
+{cards}
+          </div>
+        </section>
+        <h2 class="examples-title">Пример продукции</h2>"""
+
+
 def render_page(category: str, items: list[dict[str, str]]) -> str:
     title = esc(category)
     description = esc(CATEGORY_DESCRIPTIONS[category])
     page_title = esc(f"{category} - примеры работ Флекспринт в Калининграде")
     page_url = f"{SITE_URL}/{CATEGORY_PAGES[category]}"
     keywords = esc(KEYWORDS[category])
+    materials = render_materials(category)
     structured_data = json.dumps(
         {
             "@context": "https://schema.org",
@@ -304,6 +348,44 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
       gap: 16px;
     }}
 
+    .materials {{
+      margin: 52px 0 42px;
+    }}
+
+    .materials > h2,
+    .examples-title {{
+      margin: 0 0 20px;
+      font-size: 28px;
+    }}
+
+    .materials-grid {{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }}
+
+    .material-card {{
+      min-width: 0;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 42px rgba(31, 41, 55, 0.055);
+    }}
+
+    .material-card h3 {{
+      margin-bottom: 12px;
+      font-size: 20px;
+    }}
+
+    .material-card p {{
+      margin: 0;
+      color: var(--muted);
+    }}
+
+    .examples-title {{
+      margin-top: 42px;
+    }}
+
     .work-card {{
       min-width: 0;
       padding: 0;
@@ -432,6 +514,7 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
 
     @media (max-width: 1040px) {{
       .portfolio-grid {{ grid-template-columns: repeat(3, 1fr); }}
+      .materials-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
       .catalog-page--termobilety .portfolio-grid {{ grid-template-columns: 1fr; }}
     }}
 
@@ -441,6 +524,7 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
       .logo__image {{ max-width: 245px; max-height: 86px; }}
       .nav {{ gap: 14px; font-size: 12px; }}
       .portfolio-grid {{ grid-template-columns: repeat(2, 1fr); }}
+      .materials-grid {{ grid-template-columns: 1fr; }}
       .catalog-page--termobilety .portfolio-grid {{ grid-template-columns: 1fr; gap: 18px; }}
       .catalog-page--termobilety .work-card {{ padding: 10px; }}
       .lightbox {{
@@ -489,6 +573,7 @@ def render_page(category: str, items: list[dict[str, str]]) -> str:
     <section class="catalog">
       <div class="container">
         <a class="btn" href="index.html#portfolio">Назад к направлениям</a>
+{materials}
 {groups}
       </div>
     </section>
