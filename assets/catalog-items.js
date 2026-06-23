@@ -602,6 +602,27 @@ const catalogItems = [
     "source": "Термочеки/Термочеки.png"
   },
   {
+    "category": "Термочеки",
+    "subcategory": "",
+    "title": "Маркировка готовой еды",
+    "src": "assets/catalog/termocheki/food-label.jpg",
+    "source": "Generated/food-label"
+  },
+  {
+    "category": "Термочеки",
+    "subcategory": "",
+    "title": "Логистическая маркировка",
+    "src": "assets/catalog/termocheki/logistics-label.jpg",
+    "source": "Generated/logistics-label"
+  },
+  {
+    "category": "Термочеки",
+    "subcategory": "",
+    "title": "Маркировка лабораторных образцов",
+    "src": "assets/catalog/termocheki/lab-label.jpg",
+    "source": "Generated/lab-label"
+  },
+  {
     "category": "Упаковка",
     "subcategory": "",
     "title": "BOPP pack (1)",
