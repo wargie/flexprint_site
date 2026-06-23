@@ -1132,7 +1132,7 @@
         card.href = categoryPages[category] || "#portfolio";
         const image = document.createElement("img");
         image.className = "portfolio-category__image";
-        image.src = items[0].src;
+        image.src = category === "Термочеки" ? `${items[0].src}?v=yellow-1` : items[0].src;
         image.alt = category;
         image.loading = "lazy";
         const body = document.createElement("div");

@@ -69,9 +69,12 @@ def esc(value: str) -> str:
 
 def render_card(item: dict[str, str]) -> str:
     alt = f"{item['category']}{', ' + item['subcategory'] if item['subcategory'] else ''}: {item['title']}"
+    image_src = item["src"]
+    if item["category"] == "Термочеки":
+        image_src = f"{image_src}?v=yellow-1"
     return f"""
-          <button class="work-card" type="button" data-lightbox-src="{esc(item['src'])}" data-lightbox-alt="{esc(alt)}">
-            <img class="work-card__image" src="{esc(item['src'])}" alt="{esc(alt)}" loading="lazy" />
+          <button class="work-card" type="button" data-lightbox-src="{esc(image_src)}" data-lightbox-alt="{esc(alt)}">
+            <img class="work-card__image" src="{esc(image_src)}" alt="{esc(alt)}" loading="lazy" />
           </button>"""
 
 
